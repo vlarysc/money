@@ -1,31 +1,64 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <base-spinner/>
+    <LayoutNotify />
+    <div class="container-fluid" v-if="logado">
+      <div class="row">
+        <div class="col-2 navigation-sidebar">
+          <h1 class="app-title">Money</h1>
+       <Navigation />
+        </div>
+        <div class="col">
+      <router-view />
+        </div>
+      </div>
     </div>
-    <router-view/>
+    <router-view  v-else/>
   </div>
 </template>
+<script>
+import BaseSpinner from './components/global/BaseSpinner.vue'
+import Navigation from './components/layout/Navigation.vue'
+import LayoutNotify from './components/layout/LayoutNotify.vue'
+
+export default {
+  name: 'App',
+  components: {
+    BaseSpinner,
+    Navigation,
+    LayoutNotify
+  },
+  data () {
+    return {
+      logado: false
+    }
+  },
+  methods: {
+  },
+  mounted () {
+    this.$firebase.auth().onAuthStateChanged(user => {
+      window.uid = user ? user.uid : null
+      this.logado = !!user
+      this.$router.push({ name: window.uid ? 'Home' : 'Login' })
+      setTimeout(() => {
+        this.$root.$emit('Spinner::hide')
+      }, 300)
+    })
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  min-height: 100vh;
+  background-color: var(--darker);
+  color: var(--light);
+  .navigation-sidebar {
+    background-color: var(--dark-medium);
+    .app-title {
+      font-size: 20pt;
+      margin-top: 10px;
+      text-align: center;
     }
   }
 }
