@@ -122,7 +122,7 @@ export default {
       color: var(--darker);
     }
     .lebel-valor {
-      color: var(--darker);
+      color: rgb(71, 71, 71);
       font-size: 8pt;
     }
   }

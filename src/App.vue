@@ -56,6 +56,7 @@ export default {
   .navigation-sidebar {
     background-color: var(--dark-medium);
     .app-title {
+      color: white;
       font-size: 20pt;
       margin-top: 10px;
       text-align: center;

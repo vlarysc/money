@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import moment from 'moment'
+import { VueMaskDirective } from 'v-mask'
 
 Vue.directive('money-format', (el, { value }) => {
   el.innerHTML = new Intl.NumberFormat('pt-BR', {
@@ -12,3 +13,5 @@ Vue.directive('money-format', (el, { value }) => {
 Vue.directive('date-format', (el, { value }) => {
   el.innerHTML = moment(value).format('DD/MM/YYYY [às] HH:mm:ss')
 })
+
+Vue.directive('mask', VueMaskDirective)

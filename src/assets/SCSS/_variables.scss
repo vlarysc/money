@@ -1,26 +1,24 @@
-$dark: #000 !important;
-$darker: #111 !important;
-$dark-medium: #333 !important;
+$dark: #111 !important;
+$darker: #ddd !important;
+$dark-medium: rgb(5, 3, 87) !important;
 $dark-low: #666 !important;
 $ligth-low: #999 !important;
 $ligth-medium: #ddd !important;
-$ligther: #eee !important;
-$light: #fff !important;
-
+$ligther: rgb(255, 255, 255) !important;
+$light: rgb(0, 0, 0) !important;
 
 $featured: #ff9900 !important;
 $featured-dark: #d68100 !important;
 
-
 :root {
-    --dark: #{$dark};
-    --darker: #{$darker};
-    --dark-medium : #{$dark-medium };
-    --dark-low: #{$dark-low};
-    --ligth-low: #{$ligth-low};
-    --ligth-medium: #{$ligth-medium};
-    --ligther: #{$ligther};
-    --light: #{$light};
-    --featured: #{$featured};
-    --featured-dark: #{$featured-dark};
+  --dark: #{$dark};
+  --darker: #{$darker};
+  --dark-medium: #{$dark-medium};
+  --dark-low: #{$dark-low};
+  --ligth-low: #{$ligth-low};
+  --ligth-medium: #{$ligth-medium};
+  --ligther: #{$ligther};
+  --light: #{$light};
+  --featured: #{$featured};
+  --featured-dark: #{$featured-dark};
 }

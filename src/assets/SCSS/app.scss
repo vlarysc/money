@@ -24,8 +24,9 @@
 }
 
 .btn-outline-primary {
-  border-color: var(--featured) !important;
-  color: var(--featured) !important;
+  border-color: white !important;
+  color: white !important;
+ 
   &:hover {
     color: var(--darker) !important;
     background-color: var(--featured) !important;

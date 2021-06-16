@@ -23,7 +23,8 @@
           </div>
           <div class="form-group col-4">
             <label for="">Valor:</label>
-            <input type="text" v-model="form.valor" class="form-control" required>
+            <money v-model="form.valor" v-bind="money" class="form-control" required></money>
+
           </div>
           <div class="form-group mt-4 col-12 flex-column d-flex align-items-center">
             <input type="file"
@@ -65,8 +66,10 @@
 </template>
 
 <script>
+import { Money } from 'v-money'
 
 export default {
+  components: { Money },
   data () {
     return {
       loading: false,
@@ -74,7 +77,7 @@ export default {
       form: {
         recibo: '',
         descricao: '',
-        valor: ''
+        valor: 0
       }
     }
   },
@@ -158,6 +161,6 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-  color: var(--darker);
+  color: rgb(32, 29, 29);
 }
 </style>

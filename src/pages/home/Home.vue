@@ -89,7 +89,7 @@ export default {
     align-items: center;
     justify-content: center;
     height: calc(50vh - 15px);
-    border: 1px solid var(--dark-medium);
+    border: 3px solid var(--ligther);
     small {
       font-size: 1.3rem;
     }

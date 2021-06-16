@@ -35,7 +35,7 @@ export default {
   width: calc(100% + 26px);
   height: 91.5vh;
   .nav-link {
-    color: var(--white);
+    color: white;
     &.active {
       color: var(--featured);
       background: transparent;

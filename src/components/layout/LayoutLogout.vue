@@ -23,7 +23,7 @@ export default {
 .btn-logout {
   width: 100%;
   cursor: pointer;
-  color: var(--white);
+  color: white;
   &:hover {
     color: var(--featured);
   }
