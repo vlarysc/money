@@ -1,0 +1,10 @@
+$namespace: "xmx"; // change the 'mx' to 'xmx'. then <date-picker prefix-class="xmx" />
+
+$popup-z-index: 99999 !important;
+
+$input-border-color: transparent !important;
+
+$input-hover-border-color: transparent !important;
+$input-border-radius: 0px !important;
+
+@import "~vue2-datepicker/scss/index.scss";
